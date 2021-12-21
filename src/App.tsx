@@ -80,11 +80,11 @@ function App() {
   }
 
   return (
-    <div className="h-screen p-5 text-cyan-500">
+    <div className="min-h-screen p-5 text-cyan-500">
       <div
-        className={`h-full grid grid-cols-3 rounded-md p-2 bg-black bg-opacity-20 backdrop-blur-md`}
+        className={`h-full grid grid-cols-3 gap-10 rounded-md p-2 bg-black bg-opacity-20 backdrop-blur-md`}
       >
-        <Header />
+        <Header todosLength={allTodos.filter(todo => !todo.checked).length} />
         <main className="col-span-2">
             <TodoForm onAdd={addTodoHandler} />
             <TodoList

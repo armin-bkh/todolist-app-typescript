@@ -2,6 +2,8 @@ import { useState } from "react";
 import { todoState } from "../../App";
 import { TodoForm } from "../TodoForm/TodoForm";
 import { TodoItem } from "../TodoItem/TodoItem";
+import  emptyImage  from '../../Assets/SVG/No data-cuate.svg';
+
 
 interface todoListProps {
   onCheck: (id: number) => void;
@@ -34,7 +36,9 @@ export const TodoList = ({
   };
 
   return (
-    <div className="mt-5">
+    <section style={{ height: "73vh" }} className="mt-5 overflow-y-auto pr-2">
+      {
+        todos.length ? 
       <ul>
         {todos.map((todo) =>
           editTodo?.id === todo.id ? (
@@ -50,7 +54,19 @@ export const TodoList = ({
             />
           )
         )}
-      </ul>
-    </div>
+      </ul> : 
+      <EmptyMessage />
+      }
+    </section>
   );
 };
+
+
+const EmptyMessage = () => {
+  return (
+    <div className="flex flex-col items-center justify-center">
+      <h1 className="text-4xl">todo list empty here!</h1>
+      <img className={`max-w-md drop-shadow-lg`} src={emptyImage} alt="empty image" />
+    </div>
+  )
+}

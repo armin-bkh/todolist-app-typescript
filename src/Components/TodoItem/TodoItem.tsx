@@ -26,7 +26,7 @@ export const TodoItem = ({
 
   return (
     <li
-      className={`flex relative items-center justify-between bg-black bg-opacity-40 rounded-md py-2 px-4 mb-2`}
+      className={`shadow-lg shadow-cyan-500/30  flex relative items-center justify-between bg-black bg-opacity-40 rounded-md py-2 px-4 mb-4`}
     >
       <p className={`flex-1  ${
         checked ? "decoration-cyan-800 line-through text-cyan-900" : null

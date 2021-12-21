@@ -9,7 +9,7 @@ interface sideBarProps {
 
 export const SideBar = ({ filter, onFilter }: sideBarProps) => {
     return (
-        <aside>
+        <aside className='flex flex-col justify-between'>
             <SelectBox value={filter} onFilter={onFilter} />
             <img className={`drop-shadow-lg`} src={todoImage} alt="todo image" />
         </aside>

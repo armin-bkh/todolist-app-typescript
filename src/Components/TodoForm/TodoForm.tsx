@@ -22,11 +22,12 @@ export const TodoForm = ({ todo, onAdd }: todoFormProps) => {
   return (
     <form
       onSubmit={submitHandler}
-      className="w-full mb-2 flex items-center shadow-lg shadow-cyan-600/30 rounded-md"
+      className="w-full mb-4 flex items-center shadow-lg shadow-cyan-600/30 rounded-md"
     >
       <input
+        autoFocus
         placeholder="your todo"
-        className="flex-1 py-2 px-4 rounded-l-md bg-cyan-700 focus:outline-none"
+        className="flex-1 py-2 px-4 rounded-l-md bg-cyan-700 focus:outline-none placeholder:text-cyan-900"
         type="text"
         value={todoValue}
         onChange={changeHandler}
