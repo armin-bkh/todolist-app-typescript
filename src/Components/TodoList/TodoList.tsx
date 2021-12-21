@@ -3,7 +3,7 @@ import { todoState } from "../../App";
 import { TodoForm } from "../TodoForm/TodoForm";
 import { TodoItem } from "../TodoItem/TodoItem";
 import  emptyImage  from '../../Assets/SVG/No data-cuate.svg';
-
+import styles from './TodoList.module.scss';
 
 interface todoListProps {
   onCheck: (id: number) => void;
@@ -36,7 +36,7 @@ export const TodoList = ({
   };
 
   return (
-    <section style={{ height: "73vh" }} className="mt-5 overflow-y-auto pr-2">
+    <section className={`mt-5 overflow-y-auto p-2 ${styles.todoList}`}>
       {
         todos.length ? 
       <ul>

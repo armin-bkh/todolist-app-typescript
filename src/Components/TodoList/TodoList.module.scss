@@ -1,0 +1,25 @@
+.todoList{
+    height: 73vh;
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+    
+    /* Track */
+    &::-webkit-scrollbar-track {
+          border-radius: 1rem;
+        background: #164e63;
+      }
+      
+      /* Handle */
+      &::-webkit-scrollbar-thumb {
+        background: #0e7490;
+        border-radius: 1rem;
+      }
+      
+      /* Handle on hover */
+     &::-webkit-scrollbar-thumb:hover {
+        background: #0891b2;
+      }
+}
