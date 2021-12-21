@@ -31,6 +31,24 @@ function App() {
     setAllTodos(prevAllTodos => prevAllTodos.filter(todo => todo.id !== id));
   }
 
+  const editTodoHandler = (value: string, id: number) => {
+    const cloneAllTodos = [...allTodos];
+    const index = cloneAllTodos.findIndex(todo => todo.id === id);
+    const selectedTodo = {...cloneAllTodos[index]};
+    selectedTodo.value = value;
+    cloneAllTodos[index] = selectedTodo;
+    setAllTodos(cloneAllTodos);
+  }
+
+  const checkTodoHandler = (id: number) => {
+    const cloneAllTodos = [...allTodos];
+    const index = cloneAllTodos.findIndex(todo => todo.id === id);
+    const selectedTodo = {...cloneAllTodos[index]};
+    selectedTodo.checked = !selectedTodo.checked;
+    cloneAllTodos[index] = selectedTodo;
+    setAllTodos(cloneAllTodos);
+  }
+
   return (
     <div className="h-screen p-5 text-cyan-500">
       <div className={`h-full rounded-md p-2 bg-black bg-opacity-20 backdrop-blur-md`}>
@@ -38,7 +56,7 @@ function App() {
         <main className="mt-28 grid grid-cols-3">
           <section className="col-span-2">
           <TodoForm onAdd={addTodoHandler} />
-          <TodoList todos={allTodos} onDelete={deleteTodoHandler} />
+          <TodoList onCheck={checkTodoHandler} todos={allTodos} onEdit={editTodoHandler} onDelete={deleteTodoHandler} />
           </section>
         </main>
       </div>
