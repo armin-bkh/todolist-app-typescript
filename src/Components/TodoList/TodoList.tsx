@@ -65,7 +65,7 @@ export const TodoList = ({
 const EmptyMessage = () => {
   return (
     <div className="flex flex-col items-center justify-center">
-      <h1 className="text-xl lg:text-4xl titles">todo list empty here!</h1>
+      <h1 className="text-xl lg:text-4xl titles">todo list is empty dude!</h1>
       <img className={`max-w-xs lg:max-w-md drop-shadow-lg`} src={emptyImage} alt="empty image" />
     </div>
   )
