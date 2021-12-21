@@ -12,14 +12,20 @@ export type todoState = {
 
 function App() {
   const [allTodos, setAllTodos] = useState<todoState | []>([]);
+  const [todos, setTodos] = useState<todoState | []>([]);
+  const [filter, setFilter] = useState<string>('All');
 
   useEffect(() => {
     const savedAllTodos = JSON.parse(localStorage.getItem('typeTodos') || '');
-    if(savedAllTodos) setAllTodos(savedAllTodos);
+    if(savedAllTodos) {
+      setAllTodos(savedAllTodos);
+      setTodos(savedAllTodos);
+    }
   }, [])
 
   useEffect(() => {
     localStorage.setItem('typeTodos', JSON.stringify(allTodos));
+    filterTodosHandler(filter);
   }, [allTodos]);
 
   const addTodoHandler = (todo: string) => {
@@ -58,6 +64,21 @@ function App() {
     setAllTodos(cloneAllTodos);
   };
 
+
+  const filterTodosHandler = (value: string) => {
+    setFilter(value);
+    
+    if(value === "All") {
+      setTodos(allTodos);
+    }
+    if(value === "Completed"){
+      setTodos(allTodos.filter(todo => todo.checked))
+    }
+    if(value === "Uncompleted"){
+      setTodos(allTodos.filter(todo => !todo.checked))
+    }
+  }
+
   return (
     <div className="h-screen p-5 text-cyan-500">
       <div
@@ -68,12 +89,12 @@ function App() {
             <TodoForm onAdd={addTodoHandler} />
             <TodoList
               onCheck={checkTodoHandler}
-              todos={allTodos}
+              todos={todos}
               onEdit={editTodoHandler}
               onDelete={deleteTodoHandler}
             />
         </main>
-        <SideBar />
+        <SideBar onFilter={filterTodosHandler} filter={filter} />
       </div>
     </div>
   );
