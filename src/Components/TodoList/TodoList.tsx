@@ -36,7 +36,7 @@ export const TodoList = ({
   };
 
   return (
-    <section className={`mt-5 overflow-y-auto p-2 ${styles.todoList}`}>
+    <section className={`mt-5 overflow-y-auto lg:p-2 ${styles.todoList}`}>
       {
         todos.length ? 
       <ul>
@@ -65,8 +65,8 @@ export const TodoList = ({
 const EmptyMessage = () => {
   return (
     <div className="flex flex-col items-center justify-center">
-      <h1 className="text-4xl">todo list empty here!</h1>
-      <img className={`max-w-md drop-shadow-lg`} src={emptyImage} alt="empty image" />
+      <h1 className="text-xl lg:text-4xl">todo list empty here!</h1>
+      <img className={`max-w-xs lg:max-w-md drop-shadow-lg`} src={emptyImage} alt="empty image" />
     </div>
   )
 }

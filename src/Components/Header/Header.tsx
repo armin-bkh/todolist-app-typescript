@@ -1,23 +1,33 @@
 import { SiTypescript, SiReact } from "react-icons/si";
 
 interface headerProps {
-  todosLength: number
+  todosLength: number;
 }
 
 export const Header = ({ todosLength }: headerProps) => {
   return (
-    <header className={`flex h-10 items-center col-span-3`}>
-      <h1 className={`mr-auto text-4xl font-bold flex items-center`}>Todo List <span className="text-sm h-8 w-8 ml-10 bg-opacity-40 shadow-lg shadow-cyan-600/30 backdrop-blur-lg rounded-full bg-black flex items-center justify-center px-2">{todosLength || null}</span></h1>
+    <header className={`flex h-10 items-center lg:col-span-3`}>
+      <h1 className={`mr-auto text-lg lg:text-4xl font-bold flex items-center`}>
+        Todo List
+        {
+          todosLength && (
+        <span className="text-sm h-8 w-8 ml-4 lg:ml-10 bg-opacity-40 shadow-lg shadow-cyan-600/30 backdrop-blur-lg rounded-full bg-black flex items-center justify-center px-2">
+          {todosLength}
+        </span>
+          )
+        }
+      </h1>
       <div
-        className={`bg-black bg-opacity-40 backdrop-blur-lg rounded-md mr-2 flex items-center w-52 px-2 py-2 shadow-lg shadow-cyan-600/30`}
+        className={`bg-black bg-opacity-40 backdrop-blur-lg rounded-md mr-2 flex items-center lg:w-52 px-2 py-2 shadow-lg shadow-cyan-600/30`}
       >
-        <SiTypescript className="mr-2" /> TypeScript
+        <SiTypescript className="lg:mr-2" />{" "}
+        <span className="hidden lg:block"> TypeScript </span>
       </div>
       <div
-        className={`bg-black bg-opacity-40 backdrop-blur-lg rounded-md flex items-center w-52 px-2 py-2 shadow-lg shadow-cyan-600/30`}
+        className={`bg-black bg-opacity-40 backdrop-blur-lg rounded-md flex items-center lg:w-52 px-2 py-2 shadow-lg shadow-cyan-600/30`}
       >
-        <SiReact className="mr-2" />
-        React.js
+        <SiReact className="lg:mr-2" />
+        <span className="hidden lg:block">React.js</span>
       </div>
     </header>
   );

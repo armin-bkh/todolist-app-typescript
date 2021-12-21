@@ -33,7 +33,7 @@ export const TodoForm = ({ todo, onAdd }: todoFormProps) => {
         onChange={changeHandler}
       />
       <button className="bg-black bg-opacity-40 backdrop-blur-lg rounded-r-md py-2 px-4">
-        Add
+        {todo?.value ? "Edit" : "Add"}
       </button>
     </form>
   );
