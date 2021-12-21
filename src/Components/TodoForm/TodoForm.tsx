@@ -19,7 +19,7 @@ export const TodoForm = ({ onAdd }: todoFormProps) => {
 
     return (
         <form onSubmit={submitHandler} className="w-full flex items-center shadow-lg shadow-cyan-600/30">
-            <input className="flex-1 py-2 px-4 rounded-l-md bg-cyan-700 focus:outline-none" type="text" value={todo} onChange={changeHandler} />
+            <input placeholder="your todo" className="flex-1 py-2 px-4 rounded-l-md bg-cyan-700 focus:outline-none" type="text" value={todo} onChange={changeHandler} />
             <button className="bg-black bg-opacity-40 backdrop-blur-lg rounded-r-md py-2 px-4">Add</button>
         </form>
     )
