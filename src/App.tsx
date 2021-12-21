@@ -17,10 +17,13 @@ function App() {
   const [filter, setFilter] = useState<string>("All");
 
   useEffect(() => {
-    const savedAllTodos = JSON.parse(localStorage.getItem("typeTodos") || "");
-    if (savedAllTodos) {
-      setAllTodos(savedAllTodos);
-      setTodos(savedAllTodos);
+    const data = localStorage.getItem("typeTodos");
+    if(data){
+      const savedAllTodos = JSON.parse(data);
+      if (savedAllTodos) {
+        setAllTodos(savedAllTodos);
+        setTodos(savedAllTodos);
+      }
     }
   }, []);
 

@@ -10,7 +10,7 @@ export const Header = ({ todosLength }: headerProps) => {
       <h1 className={`mr-auto text-lg lg:text-4xl font-bold flex items-center`}>
         Todo List
         {
-          todosLength && (
+          todosLength > 0 && (
         <span className="text-sm h-8 w-8 ml-4 lg:ml-10 bg-opacity-40 shadow-lg shadow-cyan-600/30 backdrop-blur-lg rounded-full bg-black flex items-center justify-center px-2">
           {todosLength}
         </span>
