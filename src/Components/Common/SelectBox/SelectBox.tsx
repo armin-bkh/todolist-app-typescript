@@ -43,7 +43,7 @@ export const SelectBox = ({ value, onFilter }: selectBoxProps) => {
 
     return (
         <div className={`shadow-lg shadow-cyan-600/30`}>
-            <Select styles={customStyles} value={defaultValue(value, options)} options={options} onChange={changeHandler} />
+            <Select className={`main`} styles={customStyles} value={defaultValue(value, options)} options={options} onChange={changeHandler} />
         </div>
     )
 };

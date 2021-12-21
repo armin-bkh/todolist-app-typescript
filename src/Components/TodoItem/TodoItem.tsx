@@ -21,12 +21,12 @@ export const TodoItem = ({
   const transitions = useTransition(isShow, {
     from: { x: 20, opacity: 0 },
     enter: { x: 0, opacity: 1 },
-    leave: { x: -20, opacity: 0 },
+    leave: { x: 20, opacity: 0 },
   });
 
   return (
     <li
-      className={`shadow-lg shadow-cyan-500/30  flex relative items-center justify-between bg-black bg-opacity-40 rounded-md py-2 px-4 mb-4`}
+      className={`shadow-lg main shadow-cyan-500/30  flex relative items-center justify-between bg-black bg-opacity-40 rounded-md py-2 px-4 mb-4`}
     >
       <p className={`flex-1 cursor-pointer  ${
         checked ? "decoration-cyan-800 line-through text-cyan-900" : null
@@ -56,7 +56,7 @@ interface todoMoreProps {
 
 const TodoMore = ({ onEdit, onDelete }: todoMoreProps) => {
   return (
-    <ul className="w-full text-lg">
+    <ul className="w-full text-lg main">
       <li
         className="py-1 flex items-center justify-between cursor-pointer"
         onClick={onDelete}

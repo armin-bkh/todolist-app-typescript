@@ -27,12 +27,12 @@ export const TodoForm = ({ todo, onAdd }: todoFormProps) => {
       <input
         autoFocus
         placeholder="your todo"
-        className="flex-1 py-2 px-4 rounded-l-md bg-cyan-700 focus:outline-none placeholder:text-cyan-900"
+        className="flex-1 py-2 px-4 main rounded-l-md bg-cyan-700 focus:outline-none placeholder:text-cyan-900"
         type="text"
         value={todoValue}
         onChange={changeHandler}
       />
-      <button className="bg-black bg-opacity-40 backdrop-blur-lg rounded-r-md py-2 px-4">
+      <button className="bg-black main bg-opacity-40 backdrop-blur-lg rounded-r-md py-2 px-4">
         {todo?.value ? "Edit" : "Add"}
       </button>
     </form>
