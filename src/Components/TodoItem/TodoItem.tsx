@@ -62,6 +62,7 @@ const TodoMore = ({ onEdit, onDelete }: todoMoreProps) => {
         onClick={onDelete}
       >
         Delete
+        <div className="ml-auto h-6 w-0.5 mr-2 bg-cyan-900"></div>
         <MdDeleteSweep />
       </li>
       <li
@@ -69,6 +70,7 @@ const TodoMore = ({ onEdit, onDelete }: todoMoreProps) => {
         onClick={onEdit}
       >
         Edit
+        <div className="ml-auto h-6 w-0.5 mr-2 bg-cyan-900"></div>
         <MdOutlineEdit />
       </li>
     </ul>
