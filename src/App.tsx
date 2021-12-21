@@ -84,7 +84,7 @@ function App() {
 
   return (
     <>
-      <div className="min-h-screen p-5 text-cyan-500">
+      <div className="min-h-screen relative overflow-hidden p-3 lg:p-5 text-cyan-500">
         <div
           className={`h-full grid grid-cols-1 lg:grid-cols-3 lg:gap-10 rounded-md p-2 bg-black bg-opacity-20 backdrop-blur-md`}
         >
@@ -102,8 +102,9 @@ function App() {
           </main>
           <SideBar onFilter={filterTodosHandler} filter={filter} />
         </div>
+      <Box varaint="500" />
+      <Box varaint="700" />
       </div>
-      {/* <Box varaint="500" /> */}
     </>
   );
 }

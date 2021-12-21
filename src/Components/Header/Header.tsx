@@ -7,7 +7,7 @@ interface headerProps {
 export const Header = ({ todosLength }: headerProps) => {
   return (
     <header className={`flex h-10 items-center lg:col-span-3`}>
-      <h1 className={`mr-auto text-lg lg:text-4xl font-bold flex items-center`}>
+      <h1 className={`mr-auto text-3xl lg:text-4xl font-bold flex items-center`}>
         Todo List
         {
           todosLength > 0 && (
